@@ -89,5 +89,3 @@ That is the true ghost in the machine: not a creepy phantom haunting our circuit
 ---
 
 ## Prize Categories
-
-* **Hacktoberfest Open-Source AI Challenge: Week 4 (Ghost in the Machine)** — Overall Winner & Local-First AI Innovation
