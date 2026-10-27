@@ -63,9 +63,10 @@ export default function MemoryEditor({ onSaveMemory, initialPrompt = '', onCance
   return (
     <div className="editor-card">
       <div className="editor-header">
+        <div className="editor-folio-tag">Folio Recording Slip · Preserved Locally</div>
         <h2 className="editor-title">Preserve a Recollection</h2>
         <p className="editor-subtitle">
-          Write down memories, record voices, or save family stories exactly as they were spoken.
+          Write down memories, record family voices, or save meaningful traditions before they slip away.
         </p>
       </div>
 

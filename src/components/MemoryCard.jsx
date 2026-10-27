@@ -1,8 +1,11 @@
 import React from 'react';
-import { Calendar, Users, MapPin, Mic, Tag, ChevronRight } from 'lucide-react';
+import { Calendar, Users, MapPin, Mic } from 'lucide-react';
 import { formatArchivalDate, formatDuration } from '../utils/formatters';
 
 export default function MemoryCard({ memory, onSelect }) {
+  // Extract a human-like accession code for the card ledger
+  const accessionCode = memory.id ? `№ ${memory.id.replace('mem_', '').slice(0, 6)}` : 'FOLIO';
+
   return (
     <article
       className="memory-card"
@@ -18,21 +21,30 @@ export default function MemoryCard({ memory, onSelect }) {
       aria-label={`Open memory: ${memory.title || 'Untitled recollection'}`}
     >
       <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="card-top-ledger">
           <div className="memory-date">
             <Calendar size={13} />
             <span>{formatArchivalDate(memory.date)}</span>
           </div>
-          {memory.audioBlob && (
-            <span
-              className="archival-tag"
-              style={{ backgroundColor: 'var(--accent-terracotta-soft)', color: 'var(--accent-terracotta)', borderColor: 'var(--accent-terracotta)' }}
-              title="Voice recording attached"
-            >
-              <Mic size={11} style={{ display: 'inline', marginRight: '3px' }} />
-              {formatDuration(memory.audioDuration)}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            {memory.audioBlob && (
+              <span
+                className="archival-tag"
+                style={{
+                  backgroundColor: 'var(--accent-terracotta-soft)',
+                  color: 'var(--accent-terracotta)',
+                  borderColor: 'var(--accent-terracotta)',
+                }}
+                title="Voice recording attached"
+              >
+                <Mic size={11} style={{ display: 'inline', marginRight: '3px' }} />
+                {formatDuration(memory.audioDuration)}
+              </span>
+            )}
+            <span className="card-ledger-mark" title="Archive Accession Number">
+              {accessionCode}
             </span>
-          )}
+          </div>
         </div>
 
         <h3 className="memory-title">
@@ -40,7 +52,10 @@ export default function MemoryCard({ memory, onSelect }) {
         </h3>
 
         <p className="memory-snippet">
-          {memory.body || (memory.audioBlob ? 'Oral history recording saved without text transcript.' : 'No written content.')}
+          {memory.body ||
+            (memory.audioBlob
+              ? 'Oral history recording saved without text transcript.'
+              : 'No written story recorded.')}
         </p>
 
         {(memory.people?.length > 0 || memory.location) && (

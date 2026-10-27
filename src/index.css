@@ -1,47 +1,94 @@
 /* 
- * Echoes Design System
- * Inspired by archival journals, printed books, and tactile personal albums.
+ * Echoes Design System — Handcrafted Archival Edition
+ * Inspired by vintage library index cards, bound journals, tactile letterpress, and candlelit studies.
  */
 
 :root {
-  /* Warm Archival Palette */
-  --bg-primary: #FAF7F2;      /* Warm ivory paper */
-  --bg-surface: #FFFFFF;      /* Clean paper card */
-  --bg-subtle: #F3EFE6;       /* Linen/archival tone */
-  --bg-muted: #EAE4D9;        /* Aged paper divider */
+  /* Daylight Paper Palette (Default) */
+  --bg-primary: #FAF7F2;          /* Warm ivory paper */
+  --bg-surface: #FFFFFF;          /* Clean archival card stock */
+  --bg-subtle: #F4EFE6;           /* Linen / bookbinding cloth */
+  --bg-muted: #EAE4D9;            /* Pressed paper rule */
+  --bg-input: #FAF8F5;            /* Soft writing field */
   
-  /* Deep Ink & Typography */
-  --text-main: #1F1D1A;       /* Deep charcoal ink */
-  --text-secondary: #57524A;  /* Soft graphite */
-  --text-muted: #878074;      /* Faded ink */
-  --border-light: #E7E1D4;    /* Delicately pressed boundary */
-  --border-medium: #D5CDC0;   /* Archival folio rule */
-  --border-dark: #A39987;
+  /* Ink & Typography */
+  --text-main: #1F1D1A;           /* Deep walnut/charcoal ink */
+  --text-secondary: #57524A;      /* Aged graphite */
+  --text-muted: #8A8376;          /* Faded typewriter ink */
+  --border-light: #E7E0D2;        /* Delicately scored fold */
+  --border-medium: #D6CDC0;       /* Hand-ruled catalog border */
+  --border-dark: #A69C8A;
 
-  /* Restrained Accents */
-  --accent-terracotta: #B95335;
-  --accent-terracotta-soft: #F9EFEA;
-  --accent-olive: #4C644B;
+  /* Natural Pigment Accents */
+  --accent-terracotta: #B95335;   /* Warm brick / wax seal */
+  --accent-terracotta-soft: #FBF0EB;
+  --accent-olive: #4C644B;        /* Archival sage / book ribbon */
   --accent-olive-soft: #EEF3ED;
-  --accent-marigold: #B4782A;
+  --accent-marigold: #B4782A;     /* Amber varnish / marigold */
   --accent-marigold-soft: #FAF4E9;
+
+  /* Danger & Warnings */
+  --danger-bg: #FBF0EF;
+  --danger-text: #B93535;
+  --danger-border: #E8C1BE;
+  --danger-hover: #F8DFDC;
 
   /* Typography Stacks */
   --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
 
-  /* Shadows & Radius */
+  /* Tactile Shadows & Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 12px;
   --shadow-subtle: 0 1px 3px rgba(31, 29, 26, 0.05), 0 1px 2px rgba(31, 29, 26, 0.03);
-  --shadow-card: 0 3px 12px rgba(31, 29, 26, 0.05), 0 1px 3px rgba(31, 29, 26, 0.04);
-  --shadow-float: 0 12px 32px rgba(31, 29, 26, 0.08), 0 4px 12px rgba(31, 29, 26, 0.04);
+  --shadow-card: 0 4px 14px rgba(31, 29, 26, 0.06), 0 1px 3px rgba(31, 29, 26, 0.04);
+  --shadow-float: 0 16px 36px rgba(31, 29, 26, 0.12), 0 4px 12px rgba(31, 29, 26, 0.06);
 
-  /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-medium: 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Dot Grid Overlay */
+  --grain-color: #E5DFD3;
+  --theme-transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+/* 
+ * Night Study Mode (Candlelit Library & Dark Leather Desk)
+ * Never harsh pure black; feels like reading a journal by candlelight.
+ */
+[data-theme="dark"] {
+  --bg-primary: #171513;          /* Dark bookbinder board */
+  --bg-surface: #201D1A;          /* Aged dark leather / deep card stock */
+  --bg-subtle: #292521;           /* Walnut bookshelf / linen lining */
+  --bg-muted: #38332C;            /* Subtle card edge divider */
+  --bg-input: #1B1816;            /* Quiet ink field */
+
+  /* Ink & Typography */
+  --text-main: #ECE6DC;           /* Warm parchment ink */
+  --text-secondary: #B5ACA0;      /* Muted sepia graphite */
+  --text-muted: #827A6E;          /* Faded night text */
+  --border-light: #2C2823;        /* Soft scored edge */
+  --border-medium: #3E3830;       /* Hand-stitched rule */
+  --border-dark: #635A4E;
+
+  /* Natural Pigment Accents (Gently luminous for low light) */
+  --accent-terracotta: #D86B4C;   /* Glowing terracotta wax */
+  --accent-terracotta-soft: #38211B;
+  --accent-olive: #6E8B6D;        /* Dried eucalyptus */
+  --accent-olive-soft: #202C21;
+  --accent-marigold: #DE9E43;     /* Candle flame gold */
+  --accent-marigold-soft: #352615;
+
+  /* Danger & Warnings */
+  --danger-bg: #381919;
+  --danger-text: #F88A8A;
+  --danger-border: #5C2727;
+  --danger-hover: #4A2020;
+
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-float: 0 18px 40px rgba(0, 0, 0, 0.6);
+
+  --grain-color: #26221D;
 }
 
 /* Base Resets & Layout */
@@ -49,6 +96,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: var(--theme-transition);
 }
 
 html, body {
@@ -62,10 +110,10 @@ html, body {
   min-height: 100vh;
 }
 
-/* Paper Grain Texture (Subtle background styling) */
+/* Subtle Tactile Paper Grain */
 body {
-  background-image: radial-gradient(var(--bg-muted) 0.6px, transparent 0.6px);
-  background-size: 24px 24px;
+  background-image: radial-gradient(var(--grain-color) 0.75px, transparent 0.75px);
+  background-size: 22px 22px;
 }
 
 button, input, textarea, select {
@@ -97,38 +145,66 @@ h1, h2, h3, h4 {
   flex-direction: column;
 }
 
-/* Header */
+/* Archival Handcrafted Header */
 .archival-header {
-  padding: 2.25rem 0 1.5rem;
+  padding: 2.25rem 0 1.75rem;
   border-bottom: 1px solid var(--border-medium);
-  margin-bottom: 2rem;
+  margin-bottom: 2.25rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 1.5rem;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.archival-header::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--border-light);
 }
 
 .brand-section {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0.35rem;
+}
+
+.brand-meta-stamp {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-meta-stamp::before {
+  content: "◆";
+  font-size: 0.55rem;
+  color: var(--accent-terracotta);
 }
 
 .brand-title {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  font-size: 1.85rem;
+  gap: 0.75rem;
+  font-size: 2.1rem;
   font-family: var(--font-serif);
   font-weight: 600;
   color: var(--text-main);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .brand-badge {
   font-family: var(--font-mono);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background-color: var(--bg-subtle);
@@ -139,7 +215,7 @@ h1, h2, h3, h4 {
 }
 
 .brand-tagline {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--text-muted);
   font-style: italic;
   font-family: var(--font-serif);
@@ -149,6 +225,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 0.65rem;
+  flex-wrap: wrap;
 }
 
 /* Archival Navigation Tabs */
@@ -173,7 +250,7 @@ h1, h2, h3, h4 {
   color: var(--text-secondary);
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 180ms ease;
 }
 
 .tab-btn:hover {
@@ -187,7 +264,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
 }
 
-/* Secondary Action Buttons */
+/* Tactile Icon Buttons */
 .btn-icon {
   display: inline-flex;
   align-items: center;
@@ -199,36 +276,86 @@ h1, h2, h3, h4 {
   border-radius: var(--radius-md);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  position: relative;
+  transition: all 180ms ease;
 }
 
 .btn-icon:hover {
   color: var(--text-main);
   border-color: var(--border-dark);
   background-color: var(--bg-subtle);
+  transform: translateY(-1px);
 }
 
-/* Primary Button */
+.btn-icon:active {
+  transform: translateY(1px);
+}
+
+/* Day/Night Theme Toggle Switch (Human-Made Tactile Pill) */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: 20px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent-terracotta);
+  color: var(--text-main);
+  background-color: var(--bg-subtle);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-btn:active {
+  transform: translateY(1px);
+}
+
+.theme-icon-orb {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-terracotta);
+}
+
+/* Primary Button (Wax-seal terracotta button) */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   background-color: var(--accent-terracotta);
   color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   padding: 0.65rem 1.25rem;
   font-size: 0.92rem;
   font-weight: 600;
   border-radius: var(--radius-md);
   cursor: pointer;
-  box-shadow: 0 1px 2px rgba(185, 83, 53, 0.2);
-  transition: all var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(185, 83, 53, 0.25);
+  transition: all 180ms ease;
 }
 
 .btn-primary:hover {
-  background-color: #A8472B;
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(185, 83, 53, 0.3);
 }
 
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Secondary Archival Button */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -241,32 +368,38 @@ h1, h2, h3, h4 {
   font-weight: 500;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 180ms ease;
 }
 
 .btn-secondary:hover {
   background-color: var(--bg-subtle);
   color: var(--text-main);
   border-color: var(--border-dark);
+  transform: translateY(-1px);
 }
 
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* Danger Button */
 .btn-danger {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #FBF0EF;
-  color: #B93535;
-  border: 1px solid #E8C1BE;
+  background-color: var(--danger-bg);
+  color: var(--danger-text);
+  border: 1px solid var(--danger-border);
   padding: 0.6rem 1rem;
   font-size: 0.88rem;
   font-weight: 500;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 180ms ease;
 }
 
 .btn-danger:hover {
-  background-color: #F8DFDC;
+  background-color: var(--danger-hover);
 }
 
 /* Editor Folio (Writing a memory) */
@@ -279,6 +412,7 @@ h1, h2, h3, h4 {
   position: relative;
 }
 
+/* Handcrafted top binding rule */
 .editor-card::before {
   content: "";
   position: absolute;
@@ -293,15 +427,24 @@ h1, h2, h3, h4 {
   margin-bottom: 1.75rem;
 }
 
+.editor-folio-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.35rem;
+}
+
 .editor-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 0.35rem;
 }
 
 .editor-subtitle {
   color: var(--text-muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 .form-group {
@@ -310,7 +453,7 @@ h1, h2, h3, h4 {
 
 .form-label {
   display: block;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -320,26 +463,26 @@ h1, h2, h3, h4 {
 
 .form-input, .form-textarea {
   width: 100%;
-  background-color: #FAF9F6;
+  background-color: var(--bg-input);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
   padding: 0.75rem 0.95rem;
   font-size: 0.98rem;
   color: var(--text-main);
-  transition: all var(--transition-fast);
+  transition: border-color 150ms ease, background-color 150ms ease;
 }
 
 .form-input:focus, .form-textarea:focus {
-  background-color: #FFFFFF;
+  background-color: var(--bg-surface);
   border-color: var(--accent-terracotta);
 }
 
 .form-textarea {
-  min-height: 180px;
-  line-height: 1.7;
+  min-height: 200px;
+  line-height: 1.75;
   resize: vertical;
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
 }
 
 .form-row {
@@ -369,8 +512,8 @@ h1, h2, h3, h4 {
 }
 
 .mic-badge {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -441,11 +584,11 @@ h1, h2, h3, h4 {
   justify-content: center;
   cursor: pointer;
   color: var(--accent-terracotta);
-  transition: transform var(--transition-fast);
+  transition: transform 150ms ease;
 }
 
 .player-btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 .player-time {
@@ -454,7 +597,7 @@ h1, h2, h3, h4 {
   color: var(--text-secondary);
 }
 
-/* Library Toolbar (Search, Filter, Tags) */
+/* Library Toolbar */
 .archive-toolbar {
   display: flex;
   flex-direction: column;
@@ -495,10 +638,10 @@ h1, h2, h3, h4 {
 
 .search-input:focus {
   border-color: var(--accent-terracotta);
-  background-color: #FFFFFF;
+  background-color: var(--bg-input);
 }
 
-/* Tag Filter Pills */
+/* Filter Pills */
 .filter-pills {
   display: flex;
   align-items: center;
@@ -515,7 +658,7 @@ h1, h2, h3, h4 {
   border-radius: 20px;
   padding: 0.3rem 0.75rem;
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 180ms ease;
 }
 
 .filter-pill:hover {
@@ -530,7 +673,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
 }
 
-/* Memory Cards Grid */
+/* Handcrafted Archival Cards (Library Grid) */
 .memories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -541,17 +684,18 @@ h1, h2, h3, h4 {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  padding: 1.6rem;
   box-shadow: var(--shadow-subtle);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
   position: relative;
   overflow: hidden;
 }
 
+/* Tactile catalog left spine */
 .memory-card::before {
   content: "";
   position: absolute;
@@ -560,11 +704,11 @@ h1, h2, h3, h4 {
   width: 4px;
   height: 100%;
   background-color: var(--border-medium);
-  transition: background-color var(--transition-fast);
+  transition: background-color 180ms ease;
 }
 
 .memory-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-card);
   border-color: var(--border-dark);
 }
@@ -573,20 +717,33 @@ h1, h2, h3, h4 {
   background-color: var(--accent-terracotta);
 }
 
+.card-top-ledger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
 .memory-date {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   gap: 0.35rem;
 }
 
+.card-ledger-mark {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
 .memory-title {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: var(--text-main);
   margin-bottom: 0.75rem;
@@ -595,9 +752,9 @@ h1, h2, h3, h4 {
 
 .memory-snippet {
   font-family: var(--font-serif);
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 1.25rem;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -618,7 +775,7 @@ h1, h2, h3, h4 {
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.35rem;
 }
 
 .memory-tags {
@@ -626,8 +783,8 @@ h1, h2, h3, h4 {
   gap: 0.4rem;
   flex-wrap: wrap;
   margin-top: auto;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--border-light);
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border-light);
 }
 
 .archival-tag {
@@ -635,7 +792,7 @@ h1, h2, h3, h4 {
   font-size: 0.72rem;
   background-color: var(--bg-subtle);
   color: var(--text-secondary);
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.55rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-light);
 }
@@ -648,6 +805,7 @@ h1, h2, h3, h4 {
   border: 1px dashed var(--border-medium);
   border-radius: var(--radius-lg);
   margin: 1.5rem 0;
+  position: relative;
 }
 
 .empty-icon {
@@ -659,7 +817,7 @@ h1, h2, h3, h4 {
 }
 
 .empty-title {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 0.6rem;
 }
 
@@ -676,7 +834,7 @@ h1, h2, h3, h4 {
   flex-wrap: wrap;
   gap: 0.65rem;
   justify-content: center;
-  max-width: 580px;
+  max-width: 600px;
   margin: 1.5rem auto 0;
 }
 
@@ -684,31 +842,32 @@ h1, h2, h3, h4 {
   background-color: var(--bg-subtle);
   border: 1px solid var(--border-medium);
   border-radius: 20px;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.82rem;
+  padding: 0.4rem 0.95rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 180ms ease;
 }
 
 .prompt-chip:hover {
   background-color: var(--accent-marigold-soft);
   color: var(--accent-marigold);
   border-color: var(--accent-marigold);
+  transform: translateY(-1px);
 }
 
-/* Modal Dialog Backdrop & Paper Card */
+/* Modal Dialog */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(31, 29, 26, 0.45);
-  backdrop-filter: blur(2px);
+  background-color: rgba(18, 16, 14, 0.65);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
   z-index: 1000;
-  animation: fadeIn 200ms ease-out;
+  animation: fadeIn 180ms ease-out;
 }
 
 @keyframes fadeIn {
@@ -748,11 +907,12 @@ h1, h2, h3, h4 {
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 0.25rem;
+  padding: 0.35rem;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 150ms ease;
 }
 
 .modal-close-btn:hover {
@@ -763,8 +923,8 @@ h1, h2, h3, h4 {
 /* Memory Detail View Inside Modal */
 .detail-narrative {
   font-family: var(--font-serif);
-  font-size: 1.12rem;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  line-height: 1.85;
   color: var(--text-main);
   white-space: pre-wrap;
   margin: 1.5rem 0;
@@ -805,15 +965,17 @@ h1, h2, h3, h4 {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  background-color: var(--text-main);
-  color: #FFFFFF;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-float);
+  border: 1px solid var(--border-medium);
+  border-left: 4px solid var(--accent-terracotta);
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 500;
   z-index: 2000;
   animation: slideUp 200ms ease-out;

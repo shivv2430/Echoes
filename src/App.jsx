@@ -20,6 +20,25 @@ export default function App() {
   const [initialPrompt, setInitialPrompt] = useState('');
   const [toastMessage, setToastMessage] = useState(null);
 
+  // Theme state with local persistence & system preference fallback
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('echoes_theme');
+    if (saved) return saved;
+    if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark';
+    }
+    return 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('echoes_theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
   // Load memories from IndexedDB on startup
   const refreshMemories = async () => {
     try {
@@ -121,6 +140,8 @@ export default function App() {
         memoryCount={memories.length}
         onExport={handleExportArchive}
         onOpenSettings={() => setShowSettings(true)}
+        theme={theme}
+        onToggleTheme={toggleTheme}
       />
 
       <main>
